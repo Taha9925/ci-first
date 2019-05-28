@@ -4,10 +4,9 @@
             message: '<p>Loading..</p>', 
             timeout: 500 
         });
-
-		$("#message").slideDown();
 		
-		$("#message").slideUp(2000);
+		$("#message").show();
+		$("#message").fadeOut(3000);
 
         $(".toggle-password").click(function() {
 

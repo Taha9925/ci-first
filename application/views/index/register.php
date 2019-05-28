@@ -4,7 +4,7 @@
 		<div class="col-12 jumbotron text-center">
 			<h1>Welcome</h1>
 			<h3>Sign Up</h3>
-			<a href="<?php echo base_url();?>" class="btn btn-secondary" style="float: right;">Sign In</a>
+			<a href="<?php echo base_url();?>" class="btn btn-success" style="float: right;">Sign In</a>
 		</div>
 		<div class="col-12 col-md-6 offset-md-3 box-shadows pad-t-b-15 mar-bot-2-rem ">
 			<form action="<?php echo base_url();?>register" method="POST" id="register_form">
@@ -103,8 +103,8 @@
 						</div>
 					</div>
 					<div class="col-12 col-md-6">
-						<button type="submit" class="btn btn-outline-primary">Submit</button>
-						<input class="btn btn-outline-secondary" type="reset" value="Reset">
+						<button type="submit" class="btn btn-primary">Submit</button>
+						<input class="btn btn-secondary" type="reset" value="Reset">
 					</div>
 				</div>
 			</form>

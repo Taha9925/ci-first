@@ -1,0 +1,90 @@
+/*Font Family*/
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+.form-control:focus{
+	box-shadow: none;
+}
+
+.selectize-dropdown, .selectize-input, .selectize-input input{
+    font-size: 1rem;
+}
+.selectize-input{
+	padding: 9px 12px;
+    padding-right: 0px;
+}
+.blockUI.blockMsg.blockPage{
+	border:none !important;
+	padding: 10px !important;
+}
+.blockUI.blockMsg.blockPage p{
+	margin-bottom: 0 !important;
+}
+.field-icon {
+    float: right;
+    margin-right: 10px;
+    margin-top: -30px;
+    cursor: pointer;
+    color: green;
+    font-size: 22px;
+}
+.p-r-40{
+	padding-right: 40px;
+}
+.form-check-inline label,.form-check label{
+	cursor: pointer;
+}
+
+.datepicker{
+    padding: 6px;
+    padding-left: 12px;
+}
+
+div.help-block {
+    color: red;
+    font-size: 12px; 
+}
+.flash-message{
+	color: white;  
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.info {
+	background: #49a0d4;
+}
+.success {
+	background: #3ce83c;
+}
+.error {
+    background: #ff8787;
+}
+
+@media (min-width: 576px) {
+	.jumbotron {
+    	padding: 2rem 2rem;
+	}
+}
+
+.btn:focus,.btn:active,.btn:active:focus {
+    box-shadow: none !important;
+}
+
+.box-shadows {
+    box-shadow: 1px 1px 8px black;
+}
+
+.mar-bot-2-rem {
+    margin-bottom: 2rem;
+}
+
+.pad-t-b-15 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+table.dataTable.no-footer {
+     border-bottom: none; 
+}
+/*th, td { white-space: nowrap; }*/

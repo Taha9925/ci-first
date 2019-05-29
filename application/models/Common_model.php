@@ -39,6 +39,15 @@ class Common_model extends CI_Model {
 		}
 	}
 
+	public function deleteData($table,$where) {
+		$this->db->where($where);
+		if($this->db->delete($table)) {
+			return 1;
+		} else {
+			return 0;
+		}	
+	}
+
 	public function fetchUserFilter($search_value,$sort_field,$order_by) {
 		$this->db->select('*');
 		$this->db->from('user');

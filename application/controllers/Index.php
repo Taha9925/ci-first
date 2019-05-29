@@ -96,16 +96,19 @@ class Index extends CI_Controller {
 			} else {
 				$status = '<btn class="btn btn-danger" onclick="changeUserStatus('.$value->id.');" >'.$value->status.'</btn>';
 			}
+			$action = '<btn style="cursor:pointer;" onclick="editUser('.$value->id.');"><i class="far fa-edit"></i></btn>&nbsp;&nbsp;&nbsp;&nbsp;
+						<btn style="cursor:pointer;" onclick="deleteUser('.$value->id.');"><i class="fas fa-trash-alt"></i></btn>';
 			
 			$return['data'][] = array(
 									$value->id,
 									$value->first_name.' '.$value->last_name,
-									date('d M Y',strtotime($value->dob)),
-									$value->email."<br>".$value->mobile,
+									date('d/m/Y',strtotime($value->dob)),
+									"E:<a href='mailto:".$value->email."'>".$value->email."</a><br>M:<a href='tel:$value->mobile'>".$value->mobile.'</a>',
 									$value->gender,
 									$value->address.', '.$value->city.', '.$value->state.', India',
 									$status,
-									date('d M Y',strtotime($value->createdat)),
+									date('d/m/Y',strtotime($value->createdat)),
+									$action
 								);
 		}	
 		$return['recordsTotal'] = count($data['users']);
@@ -139,12 +142,37 @@ class Index extends CI_Controller {
 			if(!empty($status)) {
 				if($status[0]->status == 'Active') {
 					$update = $this->Common_model->updateData('user',array('status'=>'Inactive'),array('id'=>$post['user_id']));
-					echo 'success';
+					if($update) {
+						echo 'success';
+					} else {
+						echo "failure";
+					}
 				} else {
 					$update = $this->Common_model->updateData('user',array('status'=>'Active'),array('id'=>$post['user_id']));
-					echo 'success';
+					if($update) {
+						echo 'success';
+					} else {
+						echo "failure";
+					}
 				}
 			}
+		} else {
+			echo "failure";
+		}
+	}
+
+	public function deleteUser() {
+		$post = $this->input->post();
+		pr($post,0);
+		if(!empty($post)) {
+			$delete = $this->Common_model->deleteData('user',array('id'=>$post['user_id']));
+			if($delete) {
+				echo "success";
+			} else {
+				echo "failure";
+			}
+		} else {
+			echo "failure";
 		}
 	}
 

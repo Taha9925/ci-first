@@ -9,18 +9,18 @@
 	</div>
 	<div class="row">
 		<div class="col-12 offset-md-1 col-md-10 box-shadows pad-t-b-15 mar-bot-2-rem ">
-			<table id="user_table" class="table">
+			<table id="user_table" class="table table-responsive">
 				<thead>
 					<tr>
 						<th>Id</th>
 		                <th>Name</th>
 		                <th>Dob</th>
 		                <th>Contact</th>
-		                <!-- <th>Mobile</th> -->
 		                <th>Gender</th>
 		                <th>Address</th>
 		                <th>Status</th>
 		                <th>Created</th>
+		                <th>Action</th>
 		            </tr>
 				</thead>
 			</table>
@@ -37,7 +37,7 @@
         "processing": true,
         "serverSide": true,
         "columnDefs": [
-	        { "orderable": false, "targets": [1,2,3,4,5,6,7] },
+	        { "orderable": false, "targets": [1,2,3,4,5,6,7,8] },
 	        { "orderable": true, "targets": [0] }
 	    ]
 	});

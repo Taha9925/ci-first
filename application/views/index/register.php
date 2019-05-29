@@ -139,18 +139,26 @@
 			rules : {
 				fname: {
 					required: true,
+					lettersonly: true,
+					maxlength: 10
 				},
 				lname: {
-					required: true
+					required: true,
+					lettersonly: true,
+					maxlength: 10
 				},
 				email: {
 					required: true,
+					email: true
 				},
 				dob: {
 					required: true,
 				},
 				mobile: {
 					required: true,
+					number: true,
+					minlength: 10,
+					maxlength: 10
 				},
 				address: {
 					required: true,
@@ -163,9 +171,13 @@
 				},
 				password: {
 					required: true,
+					minlength: 8,
+					maxlength: 16
 				},
 				conf_password: {
 					equalTo: '#password',
+					minlength: 8,
+					maxlength: 16
 				}
 			}
 		});

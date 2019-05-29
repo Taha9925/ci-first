@@ -6,7 +6,7 @@
 			<h3>Sign In</h3>
 			<a href="<?php echo base_url();?>register" class="btn btn-success" style="float: right;">Sign Up</a>
 		</div>
-		<div class="col-12 col-md-4 offset-md-4 box-shadows pad-t-b-15 mar-bot-2-rem ">
+		<div class="col-12 col-md-4 offset-md-4 box-shadows pad-t-b-15 mar-bot-2-rem">
 			<form action="<?php echo base_url();?>" method="POST" id="login_form">
 				<div class="row">
 					<div class="col-12 col-md-12">

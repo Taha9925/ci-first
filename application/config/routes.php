@@ -58,3 +58,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['register'] = 'index/register';
 $route['dashboard'] = 'index/dashboard';
 $route['signout'] = 'index/signout';
+$route['edituser'] = 'index/editUser';

@@ -71,9 +71,20 @@ class Index extends CI_Controller {
 		is_login();
 		$data['title'] = 'Dashboard';
 		$data['users'] = $this->Common_model->selectData('user','*');
-		pr($data['users'],0);
 		$this->load->view('index/dashboard',$data);
+	}
 
+	public function editUser() {
+		is_login();
+		$get = $this->input->get();
+		if(!empty($get)) {
+			$data['user'] = $this->Common_model->selectData('user','*',array('id'=>$get['id'])); 
+			pr($data['user'],0);
+		}
+		$data['title'] = 'Edit User';
+		$data['states'] = $this->Common_model->selectData('cities','city_state as state','','city_state','ASC','1');
+		$data['city'] = $this->Common_model->selectData('cities','city_name as city',array('city_state'=>$data['user'][0]->state),'city_name','ASC','1');
+		$this->load->view('user/edit.php',$data);
 	}
 
 	public function fetchUserFilter() {
@@ -96,7 +107,7 @@ class Index extends CI_Controller {
 			} else {
 				$status = '<btn class="btn btn-danger" onclick="changeUserStatus('.$value->id.');" >'.$value->status.'</btn>';
 			}
-			$action = '<btn style="cursor:pointer;" onclick="editUser('.$value->id.');"><i class="far fa-edit"></i></btn>&nbsp;&nbsp;&nbsp;&nbsp;
+			$action = '<a style="cursor:pointer;text-decoration:none;" href="'.base_url().'edituser?id='.$value->id.'"><i class="far fa-edit"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
 						<btn style="cursor:pointer;" onclick="deleteUser('.$value->id.');"><i class="fas fa-trash-alt"></i></btn>';
 			
 			$return['data'][] = array(
